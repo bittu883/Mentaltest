@@ -1,0 +1,117 @@
+<!--panic-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz App</title>
+  <style>
+    body
+    {
+      
+      align-items: center;
+      background-color : rgb(255, 255, 255);
+      text-align : center;
+      margin : 40px;
+      margin-top: 125px;
+      border-radius : 30px;
+      border-color: rgb(66, 170, 244);
+      border-style:inset;
+      border-width: 4px;
+      width: 600px;
+      height: 550px;
+      margin-left: 450px;
+      font-size : 30px;
+    }
+    #submit-button{
+      margin-top: 20px;
+    } 
+    
+  </style>
+</head>
+<body>
+  <h1 id="a">Panic Test</h1>
+  <div id="quiz-container" >
+    <!-- Questions and options will be added here dynamically -->
+  </div>
+  <button id="submit-button">Submit Quiz</button>
+  <div id="result-container">
+    <!-- Results will be displayed here after submission -->
+  </div>
+ <div class="sc">
+  <script>
+    // Define your quiz questions and answers
+    const quizData = [
+      {
+        question: "What is the primary trigger for your panic attacks?",
+        options: ["Social situations","Specific phobias","General stress and anxiety","None of the above"],
+        answer: "Specific phobias"
+      },
+      {
+        question: "How frequently do you experience panic attacks?",
+        options: ["Rarely or never","Monthly","Weekly","Daily"],
+        answer: "Rarely or never"
+      },
+      {
+        question: "When you have a panic attack, do you experience any of the following physical symptoms?",
+        options: ["Rapid heartbeat","Shortness of breath","Sweating","Nausea or stomach discomfort"],
+        answer: "Shortness of breath"
+      },
+      {
+        question: "How long do your panic attacks typically last?",
+        options: ["Less than 5 minutes","5 to 10 minutes","More than 10 minutes","It varies"],
+        answer: "5 to 10 minutes"
+      }
+    ];
+
+    // Initialize variables
+    let currentQuestion = 0;
+    let score = 0;
+
+    // Get HTML elements
+    const quizContainer = document.getElementById("quiz-container");
+    const resultContainer = document.getElementById("result-container");
+    const submitButton = document.getElementById("submit-button");
+
+    // Function to load and display the current question
+    function loadQuestion() {
+      const currentQuizData = quizData[currentQuestion];
+      quizContainer.innerHTML = `<h2>${currentQuizData.question}</h2>`;
+      currentQuizData.options.forEach(option => {
+        quizContainer.innerHTML += `
+          <input type="radio" name="quiz" value="${option}" id="${option}">
+          <label for="${option}">${option}</label><br>
+        `;
+      });
+    }
+
+    // Function to check the user's answer and move to the next question
+    function checkAnswer() {
+      const selectedOption = document.querySelector('input[name="quiz"]:checked');
+      if (!selectedOption) return; // No option selected
+      const userAnswer = selectedOption.value;
+      if (userAnswer === quizData[currentQuestion].answer) {
+        score++;
+      }
+      currentQuestion++;
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        showResult();
+      }
+    }
+
+    // Function to display the quiz result
+    function showResult() {
+      quizContainer.style.display = "none";
+      submitButton.style.display = "none";
+      resultContainer.innerHTML = `<h2>Your Panic Score: ${score}/${quizData.length}</h2>`;
+    }
+
+    // Load the first question when the page loads
+    loadQuestion();
+
+    // Event listener for the submit button
+    submitButton.addEventListener("click", checkAnswer);
+  </script>
+  </div>
+</body>
+</html>

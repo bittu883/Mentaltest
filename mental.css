@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,400;1,500;1,700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap');
+
+:root {
+    --green: rgb(0, 126, 115);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.div-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navContainer {
+    width: 100%;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    top: 0;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 2px 2px;
+}
+
+.main {
+    width: 100%;
+    height: calc(100vh - 180px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.quesOptionsContainer {
+    min-width: 100%;
+}
+
+.questionContainer {
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.counterContainer {
+    height: 100px;
+}
+
+.counter {
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    border: 3px solid var(--green);
+}
+
+.counter>p {
+    line-height: 1.4285em;
+    letter-spacing: 0.2px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--green);
+}
+
+.question {
+    margin: 0px;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 29px;
+    letter-spacing: 0.3px;
+    color: rgb(34, 47, 45);
+    text-align: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+    height: 9vh;
+}
+
+.optionsContainer {
+    width: 80%;
+    border: 1px solid rgb(89, 110, 146);
+    border-radius: 8px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.options {
+    color: rgb(34, 47, 45);
+    line-height: unset !important;
+    font-size: 1rem;
+    width: 100%;
+    padding: 14px 16px;
+}
+
+.options+.options {
+    border-top: 1px solid rgb(89, 110, 146);
+}
+
+.options:active,
+.options:focus,
+.options:hover {
+    background-color: var(--green);
+    color: white;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+    text-align: center;
+    width: 100%;
+
+    letter-spacing: 0.2px;
+    line-height: 16px;
+    color: rgb(89, 110, 146);
+    margin-top: 16px;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.btnsContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10vh;
+}
+
+.btnsContainer>a {
+    color: white;
+    background-color: var(--green);
+    text-decoration: none;
+    padding: 10px 40px;
+    border-radius: 6px;
+}
+
+.btnsContainer>a:hover {
+    background-color: rgb(0, 101, 92);
+}
+
+.thankYouMessage {
+    letter-spacing: 0.2px;
+    line-height: 1.4;
+    color: var(--green);
+    text-align: center;
+    margin-top: 16px;
+    font-weight: 900;
+    font-size: 30px;
+    max-width: 405px;
+}

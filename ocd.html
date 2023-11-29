@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz App</title>
+  <style>
+    body
+    {
+      
+      align-items: center;
+      background-color : rgb(255, 255, 255);
+      text-align : center;
+      margin : 40px;
+      margin-top: 125px;
+      border-radius : 30px;
+      border-color: rgb(66, 170, 244);
+      border-style:inset;
+      border-width: 4px;
+      width: 700px;
+      height: 690px;
+      margin-left: 370px;
+      font-size : 30px;
+    }
+    #submit-button{
+      margin-top: 20px;
+    } 
+    
+  </style>
+</head>
+<body>
+  <h1 id="a">Obsessive-Compulsive Disorder Test</h1>
+  <div id="quiz-container" >
+    <!-- Questions and options will be added here dynamically -->
+  </div>
+  <button id="submit-button">Submit</button>
+  <div id="result-container">
+    <!-- Results will be displayed here after submission -->
+  </div>
+ <div class="sc">
+  <script>
+    // Define your quiz questions and answers
+    const quizData = [
+      {
+        question: "How often do you experience intrusive, unwanted thoughts that make you anxious or uncomfortable?",
+        options: ["Rarely","Sometimes","Frequently","Almost constantly"],
+        answer: "Frequently"
+      },
+      {
+        question: "Do you engage in repetitive behaviors or rituals in response to these thoughts?",
+        options: ["Never","Occasionally","Often","Always"],
+        answer: "Often"
+      },
+      {
+        question: "Do these thoughts and behaviors interfere with your daily life,work,or,relationships?",
+        options: ["Not at all", "A little ", "Moderately", "Significantly"],
+        answer: "Modertely"
+      },
+      {
+        question: "How much time each day do you spend performing these rituals or compulsions?",
+        options: ["Less than 15 minutes", "15-30 minutes", "30 minutes to 1 hour", "More than 1 hour"],
+        answer: "30 minutes to 1 hour"
+      }
+    ];
+
+    // Initialize variables
+    let currentQuestion = 0;
+    let score = 0;
+
+    // Get HTML elements
+    const quizContainer = document.getElementById("quiz-container");
+    const resultContainer = document.getElementById("result-container");
+    const submitButton = document.getElementById("submit-button");
+
+    // Function to load and display the current question
+    function loadQuestion() {
+      const currentQuizData = quizData[currentQuestion];
+      quizContainer.innerHTML = `<h2>${currentQuizData.question}</h2>`;
+      currentQuizData.options.forEach(option => {
+        quizContainer.innerHTML += `
+          <input type="radio" name="quiz" value="${option}" id="${option}">
+          <label for="${option}">${option}</label><br>
+        `;
+      });
+    }
+
+    // Function to check the user's answer and move to the next question
+    function checkAnswer() {
+      const selectedOption = document.querySelector('input[name="quiz"]:checked');
+      if (!selectedOption) return; // No option selected
+      const userAnswer = selectedOption.value;
+      if (userAnswer === quizData[currentQuestion].answer) {
+        score++;
+      }
+      currentQuestion++;
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        showResult();
+      }
+    }
+
+    // Function to display the quiz result
+    function showResult() {
+      quizContainer.style.display = "none";
+      submitButton.style.display = "none";
+      resultContainer.innerHTML = `<h2>Your OCD Level: ${score}/${quizData.length}</h2>`;
+    }
+
+    // Load the first question when the page loads
+    loadQuestion();
+
+    // Event listener for the submit button
+    submitButton.addEventListener("click", checkAnswer);
+  </script>
+  </div>
+</body>
+</html>

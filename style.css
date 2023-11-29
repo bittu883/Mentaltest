@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    border: border-box;
+}
+.navbar{
+    height: 60px;
+    background-color: rgb(224, 245, 245);
+    color: rgb(0, 0, 0);
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navlogo{
+    height: 76px;
+    width: 150px;
+
+}
+.logo{
+    background-image: url("mind1.png");
+    background-size: cover;
+    height: 100px;
+    width: 100%;
+
+
+}
+.border{
+    border: 2px solid transparent;
+}
+
+.border:hover{
+    border: 2px solid rgb(147, 131, 163);
+}
+  
+.login1{
+    font-weight: 600;
+    color: rgb(17, 77, 189);
+    margin-left: 10px;
+    margin-right: 25px;
+    margin-top: 24px;
+    
+}
+span{
+    font-size: 1rem;
+    border: 0.2rem;
+    font-family: 'Mooli', sans-serif;
+    padding: 5px;
+   
+}
+span:hover{
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    
+}
+.scheme{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.getstarted{
+    background-color: rgb(54, 133, 116);
+    padding: 2px;
+    margin-right: 10px;
+    border: 0.2rem solid transparent;
+    border-radius: 4px;
+    margin-top: 20px;
+    font-weight: 700;
+    font-family: 'Mooli', sans-serif;
+}
+.getstarted:hover{
+    background-color: aqua;
+}
+#for{
+    background-color:  rgb(224, 245, 245);
+    margin-top: 24px;
+    border: 0px;
+    border-radius: 4px;
+    font-family: 'Mooli', sans-serif;
+    color: rgb(17, 77, 189);
+    font-weight: 600;
+    font-size: 1rem;
+}
+#for1{
+    border-radius: 4px;
+    border: 0px;
+}
+#for:hover{
+    background-color: white;
+}
+
+
+.hero1{
+    text-align: center;
+    margin: 20px;
+    margin-top: 85px;
+    
+}
+#h1{
+    font-family: 'Croissant One', cursive;
+    font-size: 50px;
+}
+#h2{
+    text-align: center;
+}
+.abc{
+    display: flex;
+}
+.container {
+    
+    position: relative;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    margin-left: 65px;
+    margin-top: 30px;
+   margin-right: -60px;
+  
+    
+  }
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    font-family: 'Roboto Slab', serif;
+  }
+
+  #img1{
+        height: 300px;
+        width: 400px;
+        border-radius: 100px;
+  }
+  #img1:hover{
+    height: 305px;
+    width:430px ;
+    transition: 1s;
+  }
+  .link1{
+    text-decoration: none;
+  }
+ 
+  .footer {
+   margin-top: 100px;
+    height: 40px;
+    background-color: #072e22;
+    color: #fff;
+    padding: 20px;
+    text-align: center; /* Align the text to the left */
+    width: 100%px; /* Make the footer take the full width of its container */
+}
